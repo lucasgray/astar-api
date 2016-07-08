@@ -1,0 +1,10 @@
+CREATE TABLE items(
+  id SERIAL NOT NULL PRIMARY KEY,
+  name TEXT,
+  lat NUMERIC NOT NULL,
+  lng NUMERIC NOT NULL,
+  found BOOLEAN NOT NULL,
+  found_at TIMESTAMP,
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL
+);

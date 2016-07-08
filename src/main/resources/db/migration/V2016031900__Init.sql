@@ -1,0 +1,24 @@
+CREATE TABLE routes(
+  id SERIAL NOT NULL PRIMARY KEY,
+  name TEXT,
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL
+);
+
+CREATE TABLE lat_lngs(
+  id SERIAL NOT NULL PRIMARY KEY,
+  route_id BIGINT NOT NULL REFERENCES routes(id),
+  lat NUMERIC NOT NULL,
+  lng NUMERIC NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL
+);
+
+CREATE TABLE cities(
+  id SERIAL NOT NULL PRIMARY KEY,
+  lat NUMERIC NOT NULL,
+  lng NUMERIC NOT NULL,
+  radius BIGINT NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL
+);
